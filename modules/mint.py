@@ -1,11 +1,13 @@
-from ast import Str
 from thirdweb import MintArg
+from thirdweb_web3.exceptions import TransactionNotFound
 from PIL import Image
 import io
 import requests
 from PyInquirer import Separator, prompt
+from termcolor import colored
 
-def mint(sdk, nft_module, name, description, image_uri, image_format='JPEG', properties={}):
+
+def mint(nft_module, name, description, image_uri, image_format='JPEG', properties={}):
     try:
         if image_uri == '':
             byte_im = b''
@@ -34,11 +36,12 @@ def mint(sdk, nft_module, name, description, image_uri, image_format='JPEG', pro
                                 properties=properties))
 
     except requests.exceptions.ReadTimeout:
-        print('A time out has occured. But, in most cases this is not a problem and the NFT is minted anyway. So, try to cross check before trying again.\n')
+        return 'A time out has occured. But, in most cases this is not a problem and the NFT is minted anyway. So, try to cross check before trying again.\n'
 
-    return nft_module.balance()
+    return 'NFT minted successfully!\n'
 
-def mint_prompt(sdk, nft_module):
+
+def mint_prompt(nft_module):
     mint_args = prompt([
         {
             'type': 'input',
@@ -82,6 +85,11 @@ def mint_prompt(sdk, nft_module):
             'default': '{}'
         }
     ])
-    print(mint(sdk=sdk, nft_module=nft_module, name=mint_args['name'],
-         description=mint_args['description'], image_uri=mint_args['image_uri'], image_format=mint_args['image_format'], 
-         properties=eval(mint_args['properties'])))
+
+    try:
+        print(colored(mint(nft_module=nft_module, name=mint_args['name'],
+                           description=mint_args['description'], image_uri=mint_args[
+                               'image_uri'], image_format=mint_args['image_format'],
+                           properties=eval(mint_args['properties'])), 'green'))
+    except TransactionNotFound:
+        print(colored('Transaction not found. This is most likely because the transaction is not mined yet. Try fetching the NFT in a few seconds, most likely the transaction would have passed and you wouldn\'t need to mint again.', 'yellow'))
