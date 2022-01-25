@@ -1,4 +1,5 @@
 # Screenshots
+
 Here are some of screenshots of the application. There are too many to show here but these should give you a good enough idea.
 
 ![Initial Options](./screenshots/1.png)

@@ -4,6 +4,7 @@ import json
 from PyInquirer import Separator, prompt
 from termcolor import colored
 
+
 # Defining the view function
 def view(nft_module) -> None:
     """

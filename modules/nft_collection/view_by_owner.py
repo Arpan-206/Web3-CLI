@@ -1,7 +1,9 @@
 # Importing the required modules
-from PyInquirer import prompt, Separator
-from termcolor import colored
 import json
+
+from PyInquirer import Separator, prompt
+from termcolor import colored
+
 
 # Defining the view_by_owner function
 def view_by_owner(nft_module) -> None:

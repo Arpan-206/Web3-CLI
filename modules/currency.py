@@ -49,7 +49,7 @@ def currency(currency_module):
                     'value': 'mint',
                     'short': 'Mint'
                 }
-                
+
             ]
         },
         {

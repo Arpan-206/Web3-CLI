@@ -2,14 +2,17 @@ from decimal import Decimal
 
 from PyInquirer import prompt
 from termcolor import colored
-from .get import get
 from thirdweb_web3.exceptions import TimeExhausted
+
+from .get import get
 
 
 def burn(currency_module):
     """
     This function is used to burn some tokens from your account.
     """
+
+    # Get the amount of tokens to burn
     burn_data = prompt([
         {
             'type': 'input',
@@ -25,9 +28,11 @@ def burn(currency_module):
         },
     ])
 
+    # Convert the amount to the correct decimal format
     amount = Decimal(burn_data['amount']) * \
         (10 ** get(currency_module)['decimals'])
 
+    # Confirm the burn
     if burn_data['confirmation']:
         try:
             try:

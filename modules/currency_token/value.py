@@ -1,10 +1,13 @@
+# Importing the required modules
 from decimal import Decimal
 
 from PyInquirer import prompt
 from termcolor import colored
+
 from .get import get
 
 
+# The function to get the value of a specific token
 def value(currency_module):
     """
     This function is used to get the value of the currency.
@@ -22,7 +25,8 @@ def value(currency_module):
         (10 ** get(currency_module)['decimals'])
 
     try:
-        print(colored( f"Value of {value_data['amount']} {get(currency_module)['symbol']}s is {currency_module.get_value(int(amount)).value} and its display value is {currency_module.get_value(int(amount)).display_value}", 'green'))
+        print(colored(
+            f"Value of {value_data['amount']} {get(currency_module)['symbol']}s is {currency_module.get_value(int(amount)).value} and its display value is {currency_module.get_value(int(amount)).display_value}", 'green'))
 
     except Exception as e:
         print(colored('Can\'t get value \n' + e, 'red'))

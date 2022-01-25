@@ -1,12 +1,14 @@
 # Importing all the required modules
-from thirdweb import MintArg
-from thirdweb_web3.exceptions import TransactionNotFound
-from PIL import Image
 import io
+from typing import *
+
 import requests
+from PIL import Image
 from PyInquirer import Separator, prompt
 from termcolor import colored
-from typing import *
+from thirdweb import MintArg
+from thirdweb_web3.exceptions import TransactionNotFound
+
 
 # Defining the mint function
 def mint(nft_module, name: str, description: str, image_uri: str, image_format='JPEG', properties={}) -> str:

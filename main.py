@@ -48,11 +48,6 @@ def main() -> None:
                     'value': 'currency',
                     'short': 'Currency'
                 },
-                {
-                    'name': 'Pack',
-                    'value': 'pack',
-                    'short': 'Pack'
-                }
             ]
         },
         {
@@ -126,10 +121,7 @@ def main() -> None:
 
     elif nft_data['module'] == 'nft_bundle':
         print(colored('Support for bundles coming soon', 'blue'))
-
-    elif nft_data['module'] == 'pack':
-        print(colored('Support for packs coming soon', 'blue'))
-
+    
     else:
         print(colored('No Module Selected', 'red'))
 

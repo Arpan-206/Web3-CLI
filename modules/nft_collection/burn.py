@@ -2,6 +2,7 @@
 from PyInquirer import prompt
 from termcolor import colored
 
+
 # Defining the burn function
 def burn(nft_module) -> None:
     """

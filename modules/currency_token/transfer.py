@@ -1,10 +1,12 @@
+# Importing modules
 from decimal import Decimal
 
 from PyInquirer import prompt
 from termcolor import colored
+
 from .get import get
 
-
+# The function to transfer tokens
 def transfer(currency_module):
     """
     This function is used to transfer some tokens from your account to another account.
@@ -37,7 +39,7 @@ def transfer(currency_module):
             signer_addr = currency_module.get_signer_address()
             currency_module.set_allowance(signer_addr, amount)
             currency_module.transfer_from(signer_addr,
-                transfer_data['address'], int(amount))
+                                          transfer_data['address'], int(amount))
             print(colored('Tokens transferred successfully!', 'green'))
 
         except Exception as e:

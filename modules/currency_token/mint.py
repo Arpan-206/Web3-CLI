@@ -1,8 +1,12 @@
+# Importing modules
 from decimal import Decimal
-from termcolor import colored
+
 from PyInquirer import prompt
+from termcolor import colored
+
 from .get import get
 
+# The function to mint tokens
 def mint(currency_module) -> None:
     mint_data = prompt([
         {
@@ -18,9 +22,9 @@ def mint(currency_module) -> None:
             'default': False,
         },
     ])
-    
-    amount = Decimal(mint_data['amount']) * (10 ** get(currency_module)['decimals'])
-    
+
+    amount = Decimal(mint_data['amount']) * \
+        (10 ** get(currency_module)['decimals'])
 
     if mint_data['confirmation']:
         try:

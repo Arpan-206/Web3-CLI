@@ -1,7 +1,8 @@
 # Importing the required modules
 from PyInquirer import prompt
-from thirdweb_web3.exceptions import ContractLogicError
 from termcolor import colored
+from thirdweb_web3.exceptions import ContractLogicError
+
 
 def transfer_prompt(nft_module) -> None:
     """
@@ -27,7 +28,8 @@ def transfer_prompt(nft_module) -> None:
                             token_id=transfer_args['id'],)
     except ContractLogicError:
         # Printing the error if the transfer failed
-        print(colored('Error: Either you do not own the NFT or some other error has occurred.', 'red'))
+        print(colored(
+            'Error: Either you do not own the NFT or some other error has occurred.', 'red'))
         return
 
     # Printing the success message
