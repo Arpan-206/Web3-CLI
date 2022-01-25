@@ -45,7 +45,7 @@ This is the project file structure for reference.
     mkdocs.yml
     requirements.txt
 
-# Dependencies
+## Dependencies
 This program depends on the following dependencies. Huge shoutout to all the maintainers and contributors of these packages.  
 
 * [PyInquirer](https://github.com/CITGuru/PyInquirer)
