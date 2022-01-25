@@ -1,12 +1,15 @@
+# Importing the required modules
 from PyInquirer import prompt, Separator
 from termcolor import colored
 import json
 
-
+# Defining the view_by_owner function
 def view_by_owner(nft_module) -> None:
     """
     This function is used to view all NFTs of a specific owner.
     """
+
+    # Getting the owner address
     view_data = prompt([
         {
             'type': 'input',
@@ -40,15 +43,18 @@ def view_by_owner(nft_module) -> None:
         }
     ])
 
+    # Fetching the owner address
     owner = view_data['owner']
-
     data = nft_module.get_owned(owner)
+
+    # Printing the NFT metadata
     if view_data['Print or Write to file?'] == 'print':
         print(colored('NFTs owned by ' + owner + ':', 'green'))
         for i in range(len(data)):
             print(colored(
                 f'{data[i].id}: Name: {data[i].name}, Description: { data[i].description }, Image: { data[i].image }, URL: { data[i].uri }', 'blue'))
 
+    # Writing the NFT metadata to a file
     elif view_data['Print or Write to file?'] == 'write':
         data_dict = {}
 

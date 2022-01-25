@@ -1,13 +1,16 @@
+# Importing the required modules
 import json
 
 from PyInquirer import Separator, prompt
 from termcolor import colored
 
-
+# Defining the view function
 def view(nft_module) -> None:
     """
     This function is used to view an NFT.
     """
+
+    # Getting the NFT to view
     view_data = prompt([
         {
             'type': 'input',
@@ -42,15 +45,19 @@ def view(nft_module) -> None:
             'validate': lambda answer: 'Please enter a valid file name' if not answer.endswith('.json') else True
         }
     ])
+    # Retreiving the NFT data
     id = int(view_data['id'])
     data = nft_module.get(id)
     data_dict = {"ID": str(id), "Name": data.name, "Description": data.description, "Image": str(
         data.image), "uri": data.uri, "Properties": data.properties}
 
+    # Printing the NFT metadata
     if view_data['Print or Write to file?'] == 'print':
         print(colored('NFT Data:', 'green'))
         for key, value in data_dict.items():
             print(colored(f'{key}: {value}', 'blue'))
+
+    # Writing the NFT metadata to a file
     else:
         with open(view_data['file_name'], 'w') as f:
             f.write(json.dumps(data_dict))

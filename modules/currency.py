@@ -5,6 +5,8 @@ def currency(currency_module):
     """
     This module prompts you to select the action that you want to do on the currency module. Then it will call the corresponding function and that function takes on.
     """
+
+    # This is the list of the actions that you can do on the currency module.
     actions = prompt([
         {
             'type': 'list',
@@ -58,6 +60,7 @@ def currency(currency_module):
         }
     ])
 
+    # Calling the desired function.
     if actions['action'] == 'balance':
         from .currency_token.balance import balance
         balance(currency_module)

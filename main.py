@@ -1,22 +1,31 @@
-# Importing stuff
+# Importing system modules
 
 import os
 import sys
 
+# Importing third party modules
 from dotenv import load_dotenv
 from pyfiglet import Figlet
 from PyInquirer import Separator, prompt
 from termcolor import colored
+
+# Importing thirdweb-sdk
 from thirdweb import SdkOptions, ThirdwebSdk
 
+# Defining the main function
 def main() -> None:
+
+    # Creating the initial figlet
     f = Figlet(font='slant')
     credit = colored(
         '                              By Arpan Pandey\n', 'blue', attrs=['bold'])
     description = colored(
         f'A CLI tool to manage your own NFT Collection from the command line via the *thirdweb* platform.', 'cyan')
+
+    # Printing the initial figlet with description
     print(colored(f.renderText('WEB3 CLI'), 'green'), credit, description, '\n')
 
+    # Getting the nft data via a prompt
     nft_data = prompt([
         {
             'type': 'list',
@@ -82,6 +91,8 @@ def main() -> None:
             'validate': lambda val: val != ''
         }
     ])
+
+    # Creating the sdk options or reporting error
     try:
         network = nft_data['Network URL']
         sdk = ThirdwebSdk(SdkOptions(
@@ -102,6 +113,7 @@ def main() -> None:
         sys.exit(1)
 
 
+    # Calling the selected module
     if nft_data['module'] == 'nft_collection':
         nft_module = sdk.get_nft_module(nft_data['NFT Smart Contract Address'])
         from modules.collection import nft_collection
@@ -113,14 +125,15 @@ def main() -> None:
         currency(currency_module=currency_module)
 
     elif nft_data['module'] == 'nft_bundle':
-        print(colored('Coming Soon', 'blue'))
+        print(colored('Support for bundles coming soon', 'blue'))
 
     elif nft_data['module'] == 'pack':
-        print(colored('Coming Soon', 'blue'))
+        print(colored('Support for packs coming soon', 'blue'))
 
     else:
         print(colored('No Module Selected', 'red'))
 
 
+# Calling the main function
 if __name__ == '__main__':
     main()
