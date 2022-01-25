@@ -60,3 +60,7 @@ temp.py
 nft_metadata.json
 
 images/
+
+# We are working actively to bring this module to the CLI too
+*/marketplace
+*/market.py
