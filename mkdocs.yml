@@ -17,9 +17,19 @@ theme:
     custom_dir: docs_assets/theme/
     palette:
         # scheme: preference uses dark or light mode based on user (OS) preference
-        scheme: preference
-        primary: deep-blue
-        accent: deep-purple
+        - scheme: default
+          toggle:
+            icon: material/weather-sunny
+            name: Switch to dark mode
+          primary: teal
+          accent: cyan
+        - scheme: slate 
+          toggle:
+            icon: material/weather-night
+            name: Switch to light mode
+          primary: teal
+          accent: cyan  
+
     icon:
         logo: fontawesome/solid/code
     favicon: '/docs_assets/images/favicon.ico'
@@ -42,6 +52,7 @@ plugins:
         enable_default_jupyter_cell_styling: false
         enable_default_pandas_dataframe_styling: true
     - awesome-pages
+    - mkdocstrings
 #    - enumerate-headings
     - print-site:
         exclude:

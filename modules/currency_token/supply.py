@@ -3,6 +3,9 @@ from .get import get
 from decimal import Decimal
 
 def supply(currency_module):
+    """
+    This function is used to get the total supply of the currency.
+    """
     try:
         total_supply = Decimal(currency_module.total_supply() / (10 ** get(currency_module)['decimals']))
         print(colored(

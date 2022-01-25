@@ -3,7 +3,7 @@ from termcolor import colored
 from PyInquirer import prompt
 from .get import get
 
-def mint(currency_module):
+def mint(currency_module) -> None:
     mint_data = prompt([
         {
             'type': 'input',

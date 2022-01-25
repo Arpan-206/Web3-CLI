@@ -44,3 +44,12 @@ This is the project file structure for reference.
     main.py
     mkdocs.yml
     requirements.txt
+
+# Dependencies
+This program depends on the following dependencies. Huge shoutout to all the maintainers and contributors of these packages.  
+
+* [PyInquirer](https://github.com/CITGuru/PyInquirer)
+* [termcolor](https://pypi.org/project/termcolor/)
+* [thirdweb-sdk](https://thirdweb.com)
+* [python-dotenv](https://pypi.org/project/python-dotenv/)
+* [pyfiglet](https://pypi.org/project/pyfiglet/)

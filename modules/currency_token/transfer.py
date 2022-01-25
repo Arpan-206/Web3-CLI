@@ -6,6 +6,9 @@ from .get import get
 
 
 def transfer(currency_module):
+    """
+    This function is used to transfer some tokens from your account to another account.
+    """
     transfer_data = prompt([
         {
             'type': 'input',

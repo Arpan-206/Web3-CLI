@@ -4,7 +4,10 @@ from PyInquirer import Separator, prompt
 from termcolor import colored
 
 
-def view(nft_module):
+def view(nft_module) -> None:
+    """
+    This function is used to view an NFT.
+    """
     view_data = prompt([
         {
             'type': 'input',

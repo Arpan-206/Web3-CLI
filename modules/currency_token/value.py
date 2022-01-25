@@ -6,6 +6,9 @@ from .get import get
 
 
 def value(currency_module):
+    """
+    This function is used to get the value of the currency.
+    """
     value_data = prompt([
         {
             'type': 'input',

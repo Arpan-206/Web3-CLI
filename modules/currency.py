@@ -2,7 +2,9 @@ from PyInquirer import Separator, prompt
 
 
 def currency(currency_module):
-
+    """
+    This module prompts you to select the action that you want to do on the currency module. Then it will call the corresponding function and that function takes on.
+    """
     actions = prompt([
         {
             'type': 'list',
@@ -83,3 +85,6 @@ def currency(currency_module):
     elif actions['action'] == 'total_supply':
         from .currency_token.supply import supply
         supply(currency_module)
+
+    else:
+        raise Exception('Invalid action')

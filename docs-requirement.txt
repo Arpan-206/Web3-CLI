@@ -10,3 +10,4 @@ mkdocs-awesome-pages-plugin==2.5.0  # enables naive configuration of page titles
 mkdocs-enumerate-headings-plugin==0.4.4  # enumerates headings across markdown pages
 mkdocs-print-site-plugin==1.2.3  # allows visiters to File > Print > Save as PDF entire markdown documentation
 mkgendocs==0.8.1  # generate MkDocs pages from Google-style docstrings of Python functions
+mkdocstrings

@@ -11,7 +11,9 @@ from .nft_collection.view_by_owner import view_by_owner
 
 
 def nft_collection(nft_module):
-
+    """
+    This is the main function of the NFT collection module. It will prompt you to select the action that you want to do on the NFT collection module. Then it will call the corresponding function and that function takes on. 
+    """
     actions = prompt([
         {
             'type': 'list',

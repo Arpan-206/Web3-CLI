@@ -5,9 +5,12 @@ import io
 import requests
 from PyInquirer import Separator, prompt
 from termcolor import colored
+from typing import *
 
-
-def mint(nft_module, name, description, image_uri, image_format='JPEG', properties={}):
+def mint(nft_module, name: str, description: str, image_uri: str, image_format='JPEG', properties={}) -> str:
+    """
+    This function is used to mint an NFT.
+    """
     try:
         if image_uri == '':
             byte_im = b''
@@ -41,7 +44,7 @@ def mint(nft_module, name, description, image_uri, image_format='JPEG', properti
     return 'NFT minted successfully!\n'
 
 
-def mint_prompt(nft_module):
+def mint_prompt(nft_module) -> None:
     mint_args = prompt([
         {
             'type': 'input',

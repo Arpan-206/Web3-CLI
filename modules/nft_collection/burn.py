@@ -2,7 +2,10 @@ from PyInquirer import prompt
 from termcolor import colored
 
 
-def burn(nft_module):
+def burn(nft_module) -> None:
+    """
+    The function is used to burn an NFT.
+    """
     burn_data = prompt([
         {
             'type': 'input',

@@ -2,7 +2,10 @@ from PyInquirer import prompt
 from thirdweb_web3.exceptions import ContractLogicError
 from termcolor import colored
 
-def transfer_prompt(nft_module):
+def transfer_prompt(nft_module) -> None:
+    """
+    This function is used to transfer an NFT.
+    """
     transfer_args = prompt([
         {
             'type': 'input',

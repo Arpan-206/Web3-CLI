@@ -7,6 +7,9 @@ from thirdweb_web3.exceptions import TimeExhausted
 
 
 def burn(currency_module):
+    """
+    This function is used to burn some tokens from your account.
+    """
     burn_data = prompt([
         {
             'type': 'input',

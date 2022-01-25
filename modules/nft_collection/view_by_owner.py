@@ -3,7 +3,10 @@ from termcolor import colored
 import json
 
 
-def view_by_owner(nft_module):
+def view_by_owner(nft_module) -> None:
+    """
+    This function is used to view all NFTs of a specific owner.
+    """
     view_data = prompt([
         {
             'type': 'input',

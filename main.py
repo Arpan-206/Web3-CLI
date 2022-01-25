@@ -10,13 +10,12 @@ from termcolor import colored
 from thirdweb import SdkOptions, ThirdwebSdk
 
 def main() -> None:
-
     f = Figlet(font='slant')
     credit = colored(
         '                              By Arpan Pandey\n', 'blue', attrs=['bold'])
     description = colored(
         f'A CLI tool to manage your own NFT Collection from the command line via the *thirdweb* platform.', 'cyan')
-    print(colored(f.renderText('WEB3 CLI'), 'magenta'), credit, description, '\n')
+    print(colored(f.renderText('WEB3 CLI'), 'green'), credit, description, '\n')
 
     nft_data = prompt([
         {
