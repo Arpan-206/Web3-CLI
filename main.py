@@ -112,6 +112,12 @@ def main() -> None:
         from modules.currency import currency
         currency(currency_module=currency_module)
 
+    elif nft_data['module'] == 'nft_bundle':
+        print(colored('Coming Soon', 'blue'))
+
+    elif nft_data['module'] == 'pack':
+        print(colored('Coming Soon', 'blue'))
+
     else:
         print(colored('No Module Selected', 'red'))
 
