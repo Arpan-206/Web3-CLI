@@ -1,4 +1,4 @@
-mkdocs==1.1.2  # static site generator for documentation in Markdown
+mkdocs==1.3.0  # static site generator for documentation in Markdown
 mkdocs-material==7.1.5  # Material support for MkDocs
 mkdocs-minify-plugin==0.4.0  # strips whitespaces in HTML markdown documentation pages
 mkdocs-git-revision-date-localized-plugin==0.9.2  # displays the date of the last git modification of a markdown page
@@ -11,3 +11,4 @@ mkdocs-enumerate-headings-plugin==0.4.4  # enumerates headings across markdown p
 mkdocs-print-site-plugin==1.2.3  # allows visiters to File > Print > Save as PDF entire markdown documentation
 mkgendocs==0.8.1  # generate MkDocs pages from Google-style docstrings of Python functions
 mkdocstrings
+mistune>=2.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
