@@ -12,3 +12,4 @@ mkdocs-print-site-plugin==1.2.3  # allows visiters to File > Print > Save as PDF
 mkgendocs==0.8.1  # generate MkDocs pages from Google-style docstrings of Python functions
 mkdocstrings
 mistune>=2.0.1 # not directly required, pinned by Snyk to avoid a vulnerability
+pygments>=2.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
