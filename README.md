@@ -3,9 +3,6 @@
 
 This is a Command Line program to interact with your NFTs, Cryptocurrencies etc. via the ThirdWeb Platform. This is just a fun little project that I made to be able to connect to blockchains and Web3 from the command line.
 
-## Authors
-
-[@Arpan-206](https://github.com/Arpan-206)
 
 ## Installation
 
@@ -40,6 +37,10 @@ Please find the Documentation
 * [thirdweb-sdk](https://thirdweb.com)
 * [python-dotenv](https://pypi.org/project/python-dotenv/)
 * [pyfiglet](https://pypi.org/project/pyfiglet/)
+
+## Authors
+
+[@Arpan-206](https://github.com/Arpan-206)
 
 ## Feedback
 
