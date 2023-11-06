@@ -5,3 +5,4 @@ python-dotenv
 pyfiglet
 eth-keyfile>=0.6.0 # not directly required, pinned by Snyk to avoid a vulnerability
 websockets>=10.0 # not directly required, pinned by Snyk to avoid a vulnerability
+pygments>=2.15.0 # not directly required, pinned by Snyk to avoid a vulnerability
